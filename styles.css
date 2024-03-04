@@ -22,3 +22,7 @@ header {
     background-color: cadetblue;
     border-color: cadetblue;
 }
+
+table {
+    border: 2px solid #5f9ea0;
+}

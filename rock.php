@@ -1,11 +1,16 @@
 <?php
     include 'dados.php';
 
-    function compara($nome, $nomecompar) {
-        return $nome['nome'] > $nomecompar['nome'];
+    function comparaEstilo($array, $valor) {
+        $results = array();
+        
+        foreach ($array as $estilo) {
+            if($estilo['estilo'] == $valor)
+                $results[] = $estilo;
+        }
+        return $results;
     }
-
-    usort($dados, 'compara')
+    $rock = comparaEstilo($dados, 'Rock');
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +48,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($dados as $linha => $item):?>
+                    <?php foreach($rock as $linha => $item):?>
                         <tr>
                             <td><?php echo $item['nome'] ?></td>
                             <td><?php echo $item['idade'] ?></td>
